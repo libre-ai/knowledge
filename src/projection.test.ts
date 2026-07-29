@@ -77,11 +77,15 @@ describe("public knowledge projection", () => {
       await Promise.all([
         Bun.write(
           resolve(schemaDirectory, "knowledge-object.schema.json"),
-          Bun.file("ecosystem/schemas/knowledge-object.schema.json"),
+          Bun.file(
+            "node_modules/@libre-ai/governance/ecosystem/schemas/knowledge-object.schema.json",
+          ),
         ),
         Bun.write(
           resolve(schemaDirectory, "knowledge-projection.schema.json"),
-          Bun.file("ecosystem/schemas/knowledge-projection.schema.json"),
+          Bun.file(
+            "node_modules/@libre-ai/governance/ecosystem/schemas/knowledge-projection.schema.json",
+          ),
         ),
       ]);
 

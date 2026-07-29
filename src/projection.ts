@@ -158,8 +158,12 @@ export async function loadKnowledgeProjection(
   return { projection: frozen, index: new KnowledgeIndex(frozen.objects) };
 }
 
+/**
+ * Root of the governance authority carrying the canonical schemas and
+ * projections — the pinned git-dep since the hub dismantling (ADR-0020).
+ */
 export function canonicalRepositoryRoot(): string {
-  return resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+  return resolve(dirname(fileURLToPath(import.meta.url)), "../node_modules/@libre-ai/governance");
 }
 
 export function loadCanonicalKnowledgeProjection(repositoryRoot = canonicalRepositoryRoot()) {
